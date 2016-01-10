@@ -1,0 +1,33 @@
+// source channel, target channel, width, height, radius
+function gaussBlur_1 (scl, tcl, w, h, r) 
+{
+    var rs = Math.ceil(r * 2.57);      // significant radius
+    for(var i=0; i<h; i++)            //图像高度，对应着y坐标
+       for(var j=0; j<w; j++)         //图像宽度,对应着x坐标
+              {
+                    var val = 0, wsum = 0;          
+                    for(var iy = i-rs; iy<i+rs+1; iy++)   //y点的坐标由该点i向上下延伸rs距离，每次延伸至iy
+                      for(var ix = j-rs; ix<j+rs+1; ix++) //x点的坐标由该点j向左右延伸rs距离，每次延伸至ix,这样覆盖的面积为（2*rs）的平方
+                           {
+                             var x = Math.min(w-1, Math.max(0, ix));//覆盖面同时限制在图像的范围内，为x坐标限制
+                             var y = Math.min(h-1, Math.max(0, iy));//y坐标限制
+                             var dsq = (ix-j)*(ix-j)+(iy-i)*(iy-i);
+                             var wght = Math.exp( -dsq / (2*r*r) ) / (Math.PI*2*r*r);  //高斯权重
+                             val += scl[y*w+x] * wght; //像素值乘以相应的权重
+                             wsum += wght;    //权重累加
+                             }
+                    tcl[i*w+j] = Math.round(val/wsum); //加权平均值得到最终结果           
+               }
+} 
+//最重要的理解点和难点scl[y*w+x]和 tcl[i*w+j]的理解，说明图像并不是传统的二维矩阵的存储方式，而是一维的存储方式，scl[y*w+x]应该对应着二维的scl(y,x),w为图像的宽度，为了便于理解：假设
+y=0,x=0，   对应0*w+0   一维数组的第一个元素
+y=0,x=1,    对应0*w+1   一维数组的第二个元素
+........................................
+y=0,x=w-1   对应0*w+w-1 一维数组的第w个元素
+说明将二维数组转换为一维数组，是按照是逐行的存储数据的。
+同理：
+y=1,x=0，   对应1*w+0   一维数组的第w+1个元素
+y=1,x=1,    对应1*w+1   一维数组的第w+2个元素
+........................................
+y=1,x=w-1   对应1*w+w-1 一维数组的第2w个元素
+                      
