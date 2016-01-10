@@ -1,17 +1,16 @@
-﻿生成启动时间为 2016/1/10 14:55:13。
-     1>项目“C:\Users\whd\Documents\GitHub\FastestGaussian\GaussianBlurFirstAlgorithm\GaussianBlurFirstAlgorithm\GaussianBlurFirstAlgorithm.vcxproj”在节点 2 上(build 个目标)。
+﻿生成启动时间为 2016/1/10 16:49:05。
+     1>项目“C:\Users\whd\Documents\GitHub\FastestGaussian\FastestGaussian\GaussianBlurFirstAlgorithm\GaussianBlurFirstAlgorithm\GaussianBlurFirstAlgorithm.vcxproj”在节点 2 上(build 个目标)。
      1>InitializeBuildStatus:
          正在创建“Debug\GaussianBlurFirstAlgorithm.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        ClCompile:
-         D:\Program Files\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\GaussianBlurFirstAlgorithm.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
-         stdafx.cpp
+         所有输出均为最新。
          D:\Program Files\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\GaussianBlurFirstAlgorithm.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt GaussianBlurFirstAlgorithm.cpp
          GaussianBlurFirstAlgorithm.cpp
-     1>c:\users\whd\documents\github\fastestgaussian\gaussianblurfirstalgorithm\gaussianblurfirstalgorithm\gaussianblurfirstalgorithm.cpp(55): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+     1>c:\users\whd\documents\github\fastestgaussian\fastestgaussian\gaussianblurfirstalgorithm\gaussianblurfirstalgorithm\gaussianblurfirstalgorithm.cpp(57): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
        ManifestResourceCompile:
-         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\GaussianBlurFirstAlgorithm.exe.embed.manifest.res" Debug\GaussianBlurFirstAlgorithm_manifest.rc 
+         所有输出均为最新。
        Link:
-         D:\Program Files\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\whd\Documents\GitHub\FastestGaussian\GaussianBlurFirstAlgorithm\Debug\GaussianBlurFirstAlgorithm.exe" /INCREMENTAL /NOLOGO opencv_calib3d247d.lib opencv_contrib247d.lib opencv_core247d.lib opencv_features2d247d.lib opencv_flann247d.lib opencv_gpu247d.lib opencv_highgui247d.lib opencv_imgproc247d.lib opencv_legacy247d.lib opencv_ml247d.lib opencv_objdetect247d.lib opencv_ts247d.lib opencv_video247d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\GaussianBlurFirstAlgorithm.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\whd\Documents\GitHub\FastestGaussian\GaussianBlurFirstAlgorithm\Debug\GaussianBlurFirstAlgorithm.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\whd\Documents\GitHub\FastestGaussian\GaussianBlurFirstAlgorithm\Debug\GaussianBlurFirstAlgorithm.lib" /MACHINE:X86 Debug\GaussianBlurFirstAlgorithm.exe.embed.manifest.res
+         D:\Program Files\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\whd\Documents\GitHub\FastestGaussian\FastestGaussian\GaussianBlurFirstAlgorithm\Debug\GaussianBlurFirstAlgorithm.exe" /INCREMENTAL /NOLOGO opencv_calib3d247d.lib opencv_contrib247d.lib opencv_core247d.lib opencv_features2d247d.lib opencv_flann247d.lib opencv_gpu247d.lib opencv_highgui247d.lib opencv_imgproc247d.lib opencv_legacy247d.lib opencv_ml247d.lib opencv_objdetect247d.lib opencv_ts247d.lib opencv_video247d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\GaussianBlurFirstAlgorithm.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\whd\Documents\GitHub\FastestGaussian\FastestGaussian\GaussianBlurFirstAlgorithm\Debug\GaussianBlurFirstAlgorithm.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\whd\Documents\GitHub\FastestGaussian\FastestGaussian\GaussianBlurFirstAlgorithm\Debug\GaussianBlurFirstAlgorithm.lib" /MACHINE:X86 Debug\GaussianBlurFirstAlgorithm.exe.embed.manifest.res
          Debug\GaussianBlurFirstAlgorithm.obj
          Debug\stdafx.obj
        Manifest:
@@ -19,12 +18,12 @@
          所有输出均为最新。
        LinkEmbedManifest:
          所有输出均为最新。
-         GaussianBlurFirstAlgorithm.vcxproj -> C:\Users\whd\Documents\GitHub\FastestGaussian\GaussianBlurFirstAlgorithm\Debug\GaussianBlurFirstAlgorithm.exe
+         GaussianBlurFirstAlgorithm.vcxproj -> C:\Users\whd\Documents\GitHub\FastestGaussian\FastestGaussian\GaussianBlurFirstAlgorithm\Debug\GaussianBlurFirstAlgorithm.exe
        FinalizeBuildStatus:
          正在删除文件“Debug\GaussianBlurFirstAlgorithm.unsuccessfulbuild”。
          正在对“Debug\GaussianBlurFirstAlgorithm.lastbuildstate”执行 Touch 任务。
-     1>已完成生成项目“C:\Users\whd\Documents\GitHub\FastestGaussian\GaussianBlurFirstAlgorithm\GaussianBlurFirstAlgorithm\GaussianBlurFirstAlgorithm.vcxproj”(build 个目标)的操作。
+     1>已完成生成项目“C:\Users\whd\Documents\GitHub\FastestGaussian\FastestGaussian\GaussianBlurFirstAlgorithm\GaussianBlurFirstAlgorithm\GaussianBlurFirstAlgorithm.vcxproj”(build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:04.64
+已用时间 00:00:09.02

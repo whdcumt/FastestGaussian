@@ -1,3 +1,5 @@
+//ด๚ย๋ึ๗าณ  http://blog.ivank.net/fastest-gaussian-blur.html
+
 // source channel, target channel, width, height, radius
 function gaussBlur_1 (scl, tcl, w, h, r) 
 {

@@ -4,6 +4,7 @@
 #include "stdafx.h"
  #include <cmath>
 #include<opencv2/opencv.hpp>
+#include<windows.h>  //包含程序运行时间函数
 using namespace std;
 using namespace cv;  
 //前面三行为OpenCV图像输入和输出所需要的基本的头文件和命名空间
@@ -34,11 +35,12 @@ int _tmain(int argc, _TCHAR* argv[])
 	cvShowImage("blue",bImg);
 	//@通道分离
 	IplImage* rImgBlur=cvCreateImage(cvGetSize(InputImageConvertIp),IPL_DEPTH_8U,1);  
-	gaussBlur_1(rImg, rImgBlur,rImgBlur->width ,rImgBlur->height,2 );
+	DWORD start_time=GetTickCount();
+	gaussBlur_1(rImg, rImgBlur,rImgBlur->width ,rImgBlur->height,5);
+	DWORD end_time=GetTickCount();
+    cout<<"The run time is:"<<(end_time-start_time)<<"ms!"<<endl;//输出运行时间
     cvShowImage("reddeblur",rImgBlur);
 
-
-	
 	cvReleaseImage(&rImg);
 	cvReleaseImage(&gImg);
 	cvReleaseImage(&bImg);
