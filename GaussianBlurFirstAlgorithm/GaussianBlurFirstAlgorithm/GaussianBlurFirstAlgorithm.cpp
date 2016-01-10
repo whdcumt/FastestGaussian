@@ -30,22 +30,33 @@ int _tmain(int argc, _TCHAR* argv[])
     IplImage* gImg=cvCreateImage(cvGetSize(InputImageConvertIp),IPL_DEPTH_8U,1);    
     IplImage* rImg=cvCreateImage(cvGetSize(InputImageConvertIp),IPL_DEPTH_8U,1);   
 	cvSplit(InputImageConvertIp,bImg,gImg,rImg,0);
-	cvShowImage("red",rImg);
-	cvShowImage("green",gImg);
-	cvShowImage("blue",bImg);
+	//cvShowImage("red",rImg);
+	//cvShowImage("green",gImg);
+	//cvShowImage("blue",bImg);
 	//@通道分离
 	IplImage* rImgBlur=cvCreateImage(cvGetSize(InputImageConvertIp),IPL_DEPTH_8U,1);  
+	IplImage* gImgBlur=cvCreateImage(cvGetSize(InputImageConvertIp),IPL_DEPTH_8U,1);  
+	IplImage* bImgBlur=cvCreateImage(cvGetSize(InputImageConvertIp),IPL_DEPTH_8U,1);  
 	DWORD start_time=GetTickCount();
-	gaussBlur_1(rImg, rImgBlur,rImgBlur->width ,rImgBlur->height,5);
+	gaussBlur_1(rImg, rImgBlur,rImgBlur->width ,rImgBlur->height,2);
+	gaussBlur_1(gImg, gImgBlur,gImgBlur->width ,gImgBlur->height,2);
+	gaussBlur_1(bImg, bImgBlur,bImgBlur->width ,bImgBlur->height,2);
 	DWORD end_time=GetTickCount();
     cout<<"The run time is:"<<(end_time-start_time)<<"ms!"<<endl;//输出运行时间
-    cvShowImage("reddeblur",rImgBlur);
+   // cvShowImage("reddeblur",rImgBlur);
+
+	//通道合并
+	 IplImage* mergeImgBlur=cvCreateImage(cvGetSize(InputImageConvertIp),IPL_DEPTH_8U,3);   
+	 cvMerge(bImgBlur,gImgBlur,rImgBlur,0,mergeImgBlur);
+	 cvShowImage("三通道模糊后图像",mergeImgBlur);
 
 	cvReleaseImage(&rImg);
 	cvReleaseImage(&gImg);
 	cvReleaseImage(&bImg);
 	cvReleaseImage(&rImgBlur);
-	
+	cvReleaseImage(&gImgBlur);
+	cvReleaseImage(&bImgBlur);
+    cvReleaseImage(&mergeImgBlur);
 	//**************************************************************//
 	waitKey();
 	return 0;
