@@ -1,4 +1,5 @@
 //代码主页  http://blog.ivank.net/fastest-gaussian-blur.html
+//下面为主页对算法1的解释
 
 // source channel, target channel, width, height, radius
 function gaussBlur_1 (scl, tcl, w, h, r) 
