@@ -38,9 +38,9 @@ int _tmain(int argc, _TCHAR* argv[])
 	IplImage* gImgBlur=cvCreateImage(cvGetSize(InputImageConvertIp),IPL_DEPTH_8U,1);  
 	IplImage* bImgBlur=cvCreateImage(cvGetSize(InputImageConvertIp),IPL_DEPTH_8U,1);  
 	DWORD start_time=GetTickCount();
-	gaussBlur_1(rImg, rImgBlur,rImgBlur->width ,rImgBlur->height,2);
-	gaussBlur_1(gImg, gImgBlur,gImgBlur->width ,gImgBlur->height,2);
-	gaussBlur_1(bImg, bImgBlur,bImgBlur->width ,bImgBlur->height,2);
+	gaussBlur_1(rImg, rImgBlur,rImgBlur->width ,rImgBlur->height,5);
+	gaussBlur_1(gImg, gImgBlur,gImgBlur->width ,gImgBlur->height,5);
+	gaussBlur_1(bImg, bImgBlur,bImgBlur->width ,bImgBlur->height,5);
 	DWORD end_time=GetTickCount();
     cout<<"The run time is:"<<(end_time-start_time)<<"ms!"<<endl;//输出运行时间
    // cvShowImage("reddeblur",rImgBlur);
@@ -80,8 +80,7 @@ void gaussBlur_1(IplImage *scl,IplImage *tcl, int w, int h, int r)
                              val += cvGet2D(scl,y,x).val[0]*wght; //像素值乘以相应的权重
                              wsum += wght;    //权重累加
                              }
-					 s.val[0]=val/wsum;
-					 s.val[0]= MIN(254, MAX(1, s.val[0]));
+					 s.val[0]= MIN(254, MAX(0, val/wsum));
                     cvSet2D(tcl,i,j, s); //加权平均值得到最终结果           
                }
 } 
